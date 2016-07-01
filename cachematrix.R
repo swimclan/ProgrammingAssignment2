@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## Function that creates the list object of get and set functions to store cached data in the closure
 
 makeCacheMatrix <- function(x = matrix()) {
 	i <- NULL
@@ -10,13 +10,13 @@ makeCacheMatrix <- function(x = matrix()) {
 		i <<- NULL
 	}
 	get <- function() x
-	setinverse <- function(inv) i << inv
+	setinverse <- function(inv) i <<- inv
 	getinverse <- function() i
 	list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 }
 
 
-## Write a short comment describing this function
+## Function that executes the inverse matrix calculation, invoking cache if the solution didnt change
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
